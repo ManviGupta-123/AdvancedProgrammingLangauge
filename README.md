@@ -238,3 +238,22 @@ class Time {
 
 Output:
 <img width="302" height="60" alt="Screenshot 2026-04-28 005057" src="https://github.com/user-attachments/assets/ef2e84b8-a737-4e0e-a36b-b8311d7f3da0" />
+
+## Assignment-6
+```
+class Factorial {
+    public static void main(String[] args) {
+        int n = 5;
+        int fact = 1;
+
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial = " + fact);
+    }
+}
+```
+
+Output:
+<img width="223" height="51" alt="Screenshot 2026-04-28 005349" src="https://github.com/user-attachments/assets/9eea3ae0-fcfb-406f-a7b5-523eb3e692d1" />
