@@ -635,10 +635,47 @@ Output:
 
 ## Assignment-10
 ```
+public class MainClass {
+    public static void main(String[] args) throws Exception {
+        A t1 = new A();
+        B t2 = new B();
+        C t3 = new C();
+
+        t1.start();
+        t1.join();
+
+        t2.start();
+        t2.join();
+
+        t3.start();
+        t3.join();
+    }
+}
+class A extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++)
+            System.out.println("A: " + i);
+    }
+}
+
+class B extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++)
+            System.out.println("B: " + i);
+    }
+}
+
+class C extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++)
+            System.out.println("C: " + i);
+    }
+}
 
 ```
 
 Output:
+<img width="102" height="693" alt="image" src="https://github.com/user-attachments/assets/efbdf718-d541-4842-b932-5267df2c0f1e" />
 
 
 
