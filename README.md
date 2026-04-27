@@ -281,3 +281,27 @@ class Armstrong {
 
 Output:
 <img width="240" height="49" alt="image" src="https://github.com/user-attachments/assets/709344c7-c47d-4605-8e8e-728e1c49d359" />
+
+```
+class Palindrome {
+    public static void main(String[] args) {
+        int n = 121, rev = 0, r, temp;
+
+        temp = n;
+
+        while (n > 0) {
+            r = n % 10;
+            rev = rev * 10 + r;
+            n = n / 10;
+        }
+
+        if (temp == rev)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+```
+
+Output:
+<img width="165" height="38" alt="image" src="https://github.com/user-attachments/assets/b83448f7-e13c-4b01-a89f-8a2ad2003468" />
