@@ -257,3 +257,27 @@ class Factorial {
 
 Output:
 <img width="223" height="51" alt="Screenshot 2026-04-28 005349" src="https://github.com/user-attachments/assets/9eea3ae0-fcfb-406f-a7b5-523eb3e692d1" />
+
+```
+class Armstrong {
+    public static void main(String[] args) {
+        int n = 153, temp, sum = 0, r;
+
+        temp = n;
+
+        while (n > 0) {
+            r = n % 10;
+            sum += r * r * r;
+            n = n / 10;
+        }
+
+        if (temp == sum)
+            System.out.println("Armstrong Number");
+        else
+            System.out.println("Not Armstrong");
+    }
+}
+```
+
+Output:
+<img width="240" height="49" alt="image" src="https://github.com/user-attachments/assets/709344c7-c47d-4605-8e8e-728e1c49d359" />
