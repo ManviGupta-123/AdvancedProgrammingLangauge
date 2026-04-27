@@ -326,3 +326,21 @@ class Fibonacci {
 
 Output:
 <img width="400" height="52" alt="image" src="https://github.com/user-attachments/assets/4888c85b-019e-4796-b1ee-2f705d73c6bb" />
+
+```
+class Pattern {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+Output:
+<img width="139" height="165" alt="image" src="https://github.com/user-attachments/assets/eebe8ddc-2352-4cec-98a6-5dcf156de3bc" />
