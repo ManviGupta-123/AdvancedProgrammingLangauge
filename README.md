@@ -549,3 +549,130 @@ class Matrix {
 
 Output:
 <img width="392" height="583" alt="image" src="https://github.com/user-attachments/assets/d71cc9ad-f86f-418d-9cda-a38a798439fc" />
+
+## Assignment-9
+```
+
+```
+
+Output:
+
+
+
+
+## Assignment-10
+```
+
+```
+
+Output:
+
+
+
+## Assignment-11
+```
+
+```
+
+Output:
+
+
+
+## Assignment-12
+```
+
+```
+
+Output:
+
+
+
+## Assignment-13
+```
+
+```
+
+Output:
+
+
+
+## Assignment-14
+```
+
+```
+
+Output:
+
+
+
+## Assignment-15
+```
+
+```
+
+Output:
+
+
+
+## Assignment-16
+```
+
+```
+
+Output:
+
+
+
+## Assignment-17
+```
+
+```
+
+Output:
+
+
+
+## Assignment-18
+```
+
+```
+
+Output:
+
+
+
+## Assignment-19
+```
+
+```
+
+Output:
+
+
+
+## Assignment-20
+```
+
+```
+
+Output:
+
+
+
+## Assignment-21
+```
+
+```
+
+Output:
+
+
+
+## Assignment-22
+```
+
+```
+
+Output:
+
+
