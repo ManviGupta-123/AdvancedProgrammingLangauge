@@ -146,3 +146,55 @@ class Distance {
 
 Output:
 <img width="232" height="54" alt="Screenshot 2026-04-28 004423" src="https://github.com/user-attachments/assets/dbd05878-0d2b-479a-b729-9dd3e207b346" />
+
+## Assignment-4
+```
+
+public class MainClass {
+    public static void main(String[] args) {
+
+        Time t1 = new Time(2, 45, 50);
+        Time t2 = new Time(3, 30, 20);
+
+        Time result = t1.add(t2);
+
+        System.out.print("Result: ");
+        result.display();
+    }
+}
+class Time {
+    int hour;
+    int minute;
+    int second;
+
+    Time(int h, int m, int s) {
+        hour = h;
+        minute = m;
+        second = s;
+    }
+
+    Time add(Time t) {
+        int h = this.hour + t.hour;
+        int m = this.minute + t.minute;
+        int s = this.second + t.second;
+
+        m += s / 60;
+        s = s % 60;
+
+        h += m / 60;
+        m = m % 60;
+
+        return new Time(h, m, s);
+    }
+
+    void display() {
+        System.out.println(hour + " hr " + minute + " min " + second + " sec");
+    }
+}
+```
+
+Output:
+<img width="337" height="49" alt="Screenshot 2026-04-28 004801" src="https://github.com/user-attachments/assets/ab12146c-356d-4857-a526-dc58946d87f4" />
+
+
+
