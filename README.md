@@ -344,3 +344,60 @@ class Pattern {
 
 Output:
 <img width="139" height="165" alt="image" src="https://github.com/user-attachments/assets/eebe8ddc-2352-4cec-98a6-5dcf156de3bc" />
+
+## Assignment-7
+```
+import java.util.Scanner;
+
+public class MainClass {
+    public static void main(String[] args) {
+        Array1D obj = new Array1D();
+
+        obj.input();
+
+        obj.output1();
+        obj.output2();
+        obj.reverse();
+    }
+}
+
+class Array1D {
+    int arr[];
+    int n;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+    }
+
+    void output1() {
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    void output2() {
+        for (int i = 0; i < n; i++) {
+            if (arr[i] % 2 == 0)
+                System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    void reverse() {
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}
+```
+
+Output:
+<img width="143" height="161" alt="image" src="https://github.com/user-attachments/assets/3fdc4667-336b-44c3-b7f2-73df4d900eda" />
