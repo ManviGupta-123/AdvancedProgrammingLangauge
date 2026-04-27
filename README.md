@@ -197,4 +197,44 @@ Output:
 <img width="337" height="49" alt="Screenshot 2026-04-28 004801" src="https://github.com/user-attachments/assets/ab12146c-356d-4857-a526-dc58946d87f4" />
 
 
+## Assignment-5
+```
+public class MainClass {
+    public static void main(String[] args) {
+        Time t1 = new Time(5, 40);
+        Time t2 = new Time(3, 35);
 
+        Time result = t1.add(t2);
+
+        System.out.print("Result: ");
+        result.display();
+    }
+}
+
+class Time {
+    int hour;
+    int minute;
+
+    Time(int h, int m) {
+        hour = h;
+        minute = m;
+    }
+
+    Time add(Time t) {
+        int h = this.hour + t.hour;
+        int m = this.minute + t.minute;
+
+        h += m / 60;
+        m = m % 60;
+
+        return new Time(h, m);
+    }
+
+    void display() {
+        System.out.println(hour + " hr " + minute + " min");
+    }
+}
+```
+
+Output:
+<img width="302" height="60" alt="Screenshot 2026-04-28 005057" src="https://github.com/user-attachments/assets/ef2e84b8-a737-4e0e-a36b-b8311d7f3da0" />
