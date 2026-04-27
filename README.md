@@ -552,11 +552,84 @@ Output:
 
 ## Assignment-9
 ```
+public class MainClass {
+    public static void main(String[] args) {
+        A a = new A();
+        B b = new B();
+        C c = new C();
+
+        a.print();
+        b.print();
+        c.print();
+    }
+}
+
+class A {
+    void print() {
+        System.out.print("A: ");
+        for (int i = 1; i <= 100; i++)
+            System.out.print(i + " ");
+    }
+}
+
+class B {
+    void print() {
+        System.out.print("\nB: ");
+        for (int i = 1; i <= 100; i++)
+            System.out.print(i + " ");
+    }
+}
+
+class C {
+    void print() {
+        System.out.print("\nC: ");
+        for (int i = 1; i <= 100; i++)
+            System.out.print(i + " ");
+    }
+}
+```
+
+Output:
+<img width="922" height="430" alt="image" src="https://github.com/user-attachments/assets/63ac606d-1ec0-483d-9fbb-ccb9b7289532" />
+
+```
+public class MainClass {
+    public static void main(String[] args) {
+        A t1 = new A();
+        B t2 = new B();
+        C t3 = new C();
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
+
+class A extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++)
+            System.out.println("A: " + i);
+    }
+}
+
+class B extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++)
+            System.out.println("B: " + i);
+    }
+}
+
+class C extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++)
+            System.out.println("C: " + i);
+    }
+}
 
 ```
 
 Output:
-
+<img width="112" height="704" alt="image" src="https://github.com/user-attachments/assets/d6032066-06c6-4b8e-9e9b-cde1fff523b1" />
 
 
 
