@@ -14,6 +14,34 @@
 
 [Program-8 write a class with multiple methods to perform matrix operations (transpose, addition, sum of rows, sum of columns, sum of diagonal).](#Assignment-8)
 
+[Program-9 Write a program using three classes to print 1-100 ,1-100,1-100 with and without thread and analyse the output and repeat the same program using runnable interface.](#Assignment-9)
+
+[Program-10 Using the concept of multithreading the output of all three threads must be synchronised (use join method).](#Assignment-10)
+
+[Program-11 Addition of 2 numbers using swing.](#Assignment-11)
+
+[Program-12 Make a registration form with 10 elements and send the data into database (use jdbc connectivity)](#Assignment-12)
+
+[Program-13 Make one calculator in swing.](#Assignment-13)
+
+[Program-14 Matrix Addition using swing class.](#Assignment-14)
+
+[Program-15 Create one jframe apply 10 buttons on that after clicking on each button a new structure is created.(Circle, oval rectangle, etc ....)](#Assignment-15)
+
+[Program-16 Just using mouse Event create a frame like paint brush with selection of colour and width.](#Assignment-16)
+
+[Program-17 Create a package of any 5 classes of your choice and import it.](#Assignment-17)
+
+[Program-18 Create one package and sub package  import and test it .](#Assignment-18)
+
+[Program-19 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception .](#Assignment-19)
+
+[Program-20 To test the range of age of one student.write a program using user defined exception.](#Assignment-20)
+
+[Program-21 File Handling Programs (given in the PPT)](#Assignment-21)
+
+[Program-22 Inheritance Programs, using interface and abstract classes.](#Assignment-22)
+
 ## Assignment-1
 ```
 public class Arithmetic {
