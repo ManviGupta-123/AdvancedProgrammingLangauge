@@ -305,3 +305,24 @@ class Palindrome {
 
 Output:
 <img width="165" height="38" alt="image" src="https://github.com/user-attachments/assets/b83448f7-e13c-4b01-a89f-8a2ad2003468" />
+
+```
+class Fibonacci {
+    public static void main(String[] args) {
+        int n = 10;
+        int a = 0, b = 1, c;
+
+        System.out.print(a + " " + b + " ");
+
+        for (int i = 2; i < n; i++) {
+            c = a + b;
+            System.out.print(c + " ");
+            a = b;
+            b = c;
+        }
+    }
+}
+```
+
+Output:
+<img width="400" height="52" alt="image" src="https://github.com/user-attachments/assets/4888c85b-019e-4796-b1ee-2f705d73c6bb" />
