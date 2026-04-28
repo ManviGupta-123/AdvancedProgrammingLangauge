@@ -829,7 +829,60 @@ Output:
 
 ## Assignment-14
 ```
+import javax.swing.*;
+import java.awt.event.*;
 
+public class MatrixAdd extends JFrame implements ActionListener {
+    JTextField a[][] = new JTextField[2][2];
+    JTextField b[][] = new JTextField[2][2];
+    JTextField c[][] = new JTextField[2][2];
+    JButton btn;
+
+    MatrixAdd() {
+        setLayout(null);
+
+        int x1 = 50, x2 = 200, x3 = 350, y = 50;
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                a[i][j] = new JTextField();
+                b[i][j] = new JTextField();
+                c[i][j] = new JTextField();
+
+                a[i][j].setBounds(x1 + j*40, y + i*40, 35, 30);
+                b[i][j].setBounds(x2 + j*40, y + i*40, 35, 30);
+                c[i][j].setBounds(x3 + j*40, y + i*40, 35, 30);
+
+                add(a[i][j]);
+                add(b[i][j]);
+                add(c[i][j]);
+            }
+        }
+
+        btn = new JButton("Add");
+        btn.setBounds(200, 150, 80, 30);
+        add(btn);
+
+        btn.addActionListener(this);
+
+        setSize(500, 300);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                int x = Integer.parseInt(a[i][j].getText());
+                int y = Integer.parseInt(b[i][j].getText());
+                c[i][j].setText(String.valueOf(x + y));
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new MatrixAdd();
+    }
+}
 ```
 
 Output:
