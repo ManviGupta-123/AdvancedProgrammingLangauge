@@ -1293,9 +1293,98 @@ Output:
 
 ## Assignment-22
 ```
+class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
 
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+    }
+}
 ```
 
 Output:
+
+```
+interface Shape {
+    void area();
+}
+
+class Circle implements Shape {
+    public void area() {
+        double r = 5;
+        System.out.println("Area of Circle = " + (3.14 * r * r));
+    }
+}
+
+class Rectangle implements Shape {
+    public void area() {
+        int l = 4, b = 6;
+        System.out.println("Area of Rectangle = " + (l * b));
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        Shape s1 = new Circle();
+        Shape s2 = new Rectangle();
+
+        s1.area();
+        s2.area();
+    }
+}
+```
+
+Output:
+
+
+```
+abstract class Shape {
+    abstract void draw();
+
+    void display() {
+        System.out.println("Drawing Shape");
+    }
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Circle Drawn");
+    }
+}
+
+class Rectangle extends Shape {
+    void draw() {
+        System.out.println("Rectangle Drawn");
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        Shape s1 = new Circle();
+        Shape s2 = new Rectangle();
+
+        s1.draw();
+        s1.display();
+
+        s2.draw();
+        s2.display();
+    }
+}
+```
+
+Output:
+
 
 
