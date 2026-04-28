@@ -831,114 +831,7 @@ public class RegistrationForm extends JFrame implements ActionListener {
     }
 }
 
-
-
-
-
-import javax.swing.*;
-import java.awt.event.*;
-import java.sql.*;
-
-public class RegistrationForm extends JFrame implements ActionListener {
-    JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
-    JButton b;
-
-    RegistrationForm() {
-        setLayout(null);
-
-        JLabel l1=new JLabel("Name");
-        JLabel l2=new JLabel("Email");
-        JLabel l3=new JLabel("Phone");
-        JLabel l4=new JLabel("Address");
-        JLabel l5=new JLabel("Username");
-        JLabel l6=new JLabel("Password");
-        JLabel l7=new JLabel("Gender");
-        JLabel l8=new JLabel("Course");
-        JLabel l9=new JLabel("City");
-        JLabel l10=new JLabel("Country");
-
-        l1.setBounds(30,20,100,25); t1.setBounds(140,20,150,25);
-        l2.setBounds(30,50,100,25); t2.setBounds(140,50,150,25);
-        l3.setBounds(30,80,100,25); t3.setBounds(140,80,150,25);
-        l4.setBounds(30,110,100,25); t4.setBounds(140,110,150,25);
-        l5.setBounds(30,140,100,25); t5.setBounds(140,140,150,25);
-        l6.setBounds(30,170,100,25); t6.setBounds(140,170,150,25);
-        l7.setBounds(30,200,100,25); t7.setBounds(140,200,150,25);
-        l8.setBounds(30,230,100,25); t8.setBounds(140,230,150,25);
-        l9.setBounds(30,260,100,25); t9.setBounds(140,260,150,25);
-        l10.setBounds(30,290,100,25); t10.setBounds(140,290,150,25);
-
-        b = new JButton("Submit");
-        b.setBounds(140,330,100,30);
-
-        add(l1); add(t1);
-        add(l2); add(t2);
-        add(l3); add(t3);
-        add(l4); add(t4);
-        add(l5); add(t5);
-        add(l6); add(t6);
-        add(l7); add(t7);
-        add(l8); add(t8);
-        add(l9); add(t9);
-        add(l10); add(t10);
-        add(b);
-
-        b.addActionListener(this);
-
-        setSize(350,420);
-        setVisible(true);
-    }
-
-    public void actionPerformed(ActionEvent e) {
-        String s1=t1.getText();
-        String s2=t2.getText();
-        String s3=t3.getText();
-        String s4=t4.getText();
-        String s5=t5.getText();
-        String s6=t6.getText();
-        String s7=t7.getText();
-        String s8=t8.getText();
-        String s9=t9.getText();
-        String s10=t10.getText();
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","root");
-
-            PreparedStatement ps = con.prepareStatement(
-                "insert into registration values(?,?,?,?,?,?,?,?,?,?)"
-            );
-
-            ps.setString(1,s1);
-            ps.setString(2,s2);
-            ps.setString(3,s3);
-            ps.setString(4,s4);
-            ps.setString(5,s5);
-            ps.setString(6,s6);
-            ps.setString(7,s7);
-            ps.setString(8,s8);
-            ps.setString(9,s9);
-            ps.setString(10,s10);
-
-            ps.executeUpdate();
-
-            JOptionPane.showMessageDialog(this,"Data Inserted Successfully");
-
-            con.close();
-        } catch(Exception ex) {
-            System.out.println(ex);
-        }
-    }
-
-    public static void main(String[] args) {
-        new RegistrationForm();
-    }
-}
 ```
-
-Output:
-
-
 
 ## Assignment-13
 ```
@@ -1027,6 +920,7 @@ public class Calculator extends JFrame implements ActionListener {
 ```
 
 Output:
+<img width="381" height="419" alt="WhatsApp Image 2026-04-28 at 12 25 27 PM" src="https://github.com/user-attachments/assets/7bbeb4f3-cc93-4e6f-a28b-99175512c8ce" />
 
 
 
@@ -1089,6 +983,7 @@ public class MatrixAdd extends JFrame implements ActionListener {
 ```
 
 Output:
+<img width="602" height="351" alt="WhatsApp Image 2026-04-28 at 12 26 49 PM" src="https://github.com/user-attachments/assets/b8e50943-aca5-4bc0-a4d5-cf428727f787" />
 
 
 
@@ -1166,6 +1061,7 @@ public class ShapeFrame extends JFrame implements ActionListener {
 ```
 
 Output:
+<img width="735" height="484" alt="WhatsApp Image 2026-04-28 at 12 27 57 PM" src="https://github.com/user-attachments/assets/da5c6931-41d3-4dfc-8b05-34ffd2c163e8" />
 
 
 
@@ -1267,6 +1163,7 @@ public class PaintApp extends JFrame implements ActionListener {
 ```
 
 Output:
+<img width="742" height="713" alt="WhatsApp Image 2026-04-28 at 12 32 27 PM" src="https://github.com/user-attachments/assets/d9975f44-21aa-4481-b105-4452c7dd73af" />
 
 
 
@@ -1331,9 +1228,6 @@ public class MainClass {
 }
 ```
 
-Output:
-
-
 
 ## Assignment-18
 ```
@@ -1387,8 +1281,6 @@ public class MainClass {
 }
 ```
 
-Output:
-
 
 
 ## Assignment-19
@@ -1417,6 +1309,7 @@ public class ExceptionDemo {
 ```
 
 Output:
+<img width="787" height="234" alt="WhatsApp Image 2026-04-28 at 12 35 21 PM" src="https://github.com/user-attachments/assets/d9e63cfe-0240-4c11-aa3f-b9e1f5d7e55f" />
 
 
 
@@ -1458,6 +1351,7 @@ public class MainClass {
 ```
 
 Output:
+<img width="787" height="234" alt="WhatsApp Image 2026-04-28 at 12 35 21 PM" src="https://github.com/user-attachments/assets/3b644eeb-b15e-489d-ac50-92c0ac2cc461" />
 
 
 
@@ -1491,6 +1385,7 @@ public class FileHandling {
 ```
 
 Output:
+<img width="641" height="224" alt="WhatsApp Image 2026-04-28 at 12 37 09 PM" src="https://github.com/user-attachments/assets/6cdd7776-9c21-44cd-b186-6ce00dae4df2" />
 
 
 
@@ -1518,6 +1413,8 @@ public class MainClass {
 ```
 
 Output:
+<img width="634" height="239" alt="WhatsApp Image 2026-04-28 at 12 38 06 PM" src="https://github.com/user-attachments/assets/04784813-007c-4a7d-b21f-3c75a19ed3c6" />
+
 
 ```
 interface Shape {
@@ -1550,6 +1447,7 @@ public class MainClass {
 ```
 
 Output:
+<img width="630" height="221" alt="WhatsApp Image 2026-04-28 at 12 39 03 PM" src="https://github.com/user-attachments/assets/be9bca72-f2dc-49ea-a628-4db76e54d7d2" />
 
 
 ```
@@ -1588,6 +1486,7 @@ public class MainClass {
 ```
 
 Output:
+<img width="602" height="233" alt="WhatsApp Image 2026-04-28 at 12 40 38 PM" src="https://github.com/user-attachments/assets/e1f0537b-eb77-4201-bdf9-9604402755ef" />
 
 
 
