@@ -1069,7 +1069,13 @@ Output:
 
 ## Assignment-17
 ```
+package mypack;
 
+public class A {
+    public void show() {
+        System.out.println("Class A");
+    }
+}
 ```
 
 Output:
