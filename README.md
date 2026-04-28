@@ -1092,6 +1092,40 @@ public class C {
         System.out.println("Class C");
     }
 }
+
+package mypack;
+
+public class D {
+    public void show() {
+        System.out.println("Class D");
+    }
+}
+
+package mypack;
+
+public class E {
+    public void show() {
+        System.out.println("Class E");
+    }
+}
+
+import mypack.*;
+
+public class MainClass {
+    public static void main(String[] args) {
+        A a = new A();
+        B b = new B();
+        C c = new C();
+        D d = new D();
+        E e = new E();
+
+        a.show();
+        b.show();
+        c.show();
+        d.show();
+        e.show();
+    }
+}
 ```
 
 Output:
