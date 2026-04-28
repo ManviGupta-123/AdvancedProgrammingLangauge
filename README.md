@@ -968,7 +968,99 @@ Output:
 
 ## Assignment-16
 ```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
 
+class DrawPoint {
+    int x,y,size;
+    Color color;
+
+    DrawPoint(int x,int y,Color c,int s) {
+        this.x=x;
+        this.y=y;
+        this.color=c;
+        this.size=s;
+    }
+}
+
+class PaintPanel extends JPanel implements MouseMotionListener {
+    ArrayList<DrawPoint> points = new ArrayList<>();
+    Color currentColor = Color.BLACK;
+    int size = 5;
+
+    PaintPanel() {
+        addMouseMotionListener(this);
+    }
+
+    public void mouseDragged(MouseEvent e) {
+        points.add(new DrawPoint(e.getX(), e.getY(), currentColor, size));
+        repaint();
+    }
+
+    public void mouseMoved(MouseEvent e) {}
+
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        for (DrawPoint p : points) {
+            g.setColor(p.color);
+            g.fillOval(p.x, p.y, p.size, p.size);
+        }
+    }
+
+    void setColor(Color c) {
+        currentColor = c;
+    }
+
+    void setSize(int s) {
+        size = s;
+    }
+}
+
+public class PaintApp extends JFrame implements ActionListener {
+    PaintPanel panel;
+    JComboBox<String> colors;
+    JComboBox<String> sizes;
+
+    PaintApp() {
+        panel = new PaintPanel();
+        panel.setBackground(Color.WHITE);
+
+        String c[] = {"Black","Red","Blue","Green","Yellow"};
+        String s[] = {"2","5","10","20"};
+
+        colors = new JComboBox<>(c);
+        sizes = new JComboBox<>(s);
+
+        colors.addActionListener(this);
+        sizes.addActionListener(this);
+
+        add(colors, BorderLayout.NORTH);
+        add(sizes, BorderLayout.SOUTH);
+        add(panel, BorderLayout.CENTER);
+
+        setSize(600,500);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String col = (String)colors.getSelectedItem();
+        if(col.equals("Black")) panel.setColor(Color.BLACK);
+        if(col.equals("Red")) panel.setColor(Color.RED);
+        if(col.equals("Blue")) panel.setColor(Color.BLUE);
+        if(col.equals("Green")) panel.setColor(Color.GREEN);
+        if(col.equals("Yellow")) panel.setColor(Color.YELLOW);
+
+        int sz = Integer.parseInt((String)sizes.getSelectedItem());
+        panel.setSize(sz);
+    }
+
+    public static void main(String[] args) {
+        new PaintApp();
+    }
+}
 ```
 
 Output:
