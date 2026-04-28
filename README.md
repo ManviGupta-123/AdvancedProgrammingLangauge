@@ -1076,6 +1076,14 @@ public class A {
         System.out.println("Class A");
     }
 }
+
+package mypack;
+
+public class B {
+    public void show() {
+        System.out.println("Class B");
+    }
+}
 ```
 
 Output:
