@@ -1219,7 +1219,39 @@ Output:
 
 ## Assignment-20
 ```
+import java.util.Scanner;
 
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String msg) {
+        super(msg);
+    }
+}
+
+class AgeTest {
+    void checkAge(int age) throws InvalidAgeException {
+        if (age < 18 || age > 60)
+            throw new InvalidAgeException("Age must be between 18 and 60");
+        else
+            System.out.println("Valid age");
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+
+        AgeTest obj = new AgeTest();
+
+        try {
+            obj.checkAge(age);
+        } catch (InvalidAgeException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
 ```
 
 Output:
