@@ -739,7 +739,88 @@ Output:
 
 ## Assignment-13
 ```
+import javax.swing.*;
+import java.awt.event.*;
 
+public class Calculator extends JFrame implements ActionListener {
+    JTextField t;
+    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bAdd,bSub,bMul,bDiv,bEq,bClr;
+
+    String op="";
+    double n1,n2;
+
+    Calculator() {
+        t = new JTextField();
+        t.setBounds(30,30,240,30);
+        add(t);
+
+        b1=new JButton("1"); b2=new JButton("2"); b3=new JButton("3");
+        b4=new JButton("4"); b5=new JButton("5"); b6=new JButton("6");
+        b7=new JButton("7"); b8=new JButton("8"); b9=new JButton("9");
+        b0=new JButton("0");
+
+        bAdd=new JButton("+"); bSub=new JButton("-");
+        bMul=new JButton("*"); bDiv=new JButton("/");
+        bEq=new JButton("="); bClr=new JButton("C");
+
+        b1.setBounds(30,80,50,40); b2.setBounds(90,80,50,40); b3.setBounds(150,80,50,40);
+        b4.setBounds(30,130,50,40); b5.setBounds(90,130,50,40); b6.setBounds(150,130,50,40);
+        b7.setBounds(30,180,50,40); b8.setBounds(90,180,50,40); b9.setBounds(150,180,50,40);
+        b0.setBounds(30,230,50,40);
+
+        bAdd.setBounds(210,80,60,40); bSub.setBounds(210,130,60,40);
+        bMul.setBounds(210,180,60,40); bDiv.setBounds(210,230,60,40);
+
+        bEq.setBounds(90,230,50,40); bClr.setBounds(150,230,50,40);
+
+        add(b1); add(b2); add(b3); add(b4); add(b5); add(b6);
+        add(b7); add(b8); add(b9); add(b0);
+        add(bAdd); add(bSub); add(bMul); add(bDiv);
+        add(bEq); add(bClr);
+
+        b1.addActionListener(this); b2.addActionListener(this); b3.addActionListener(this);
+        b4.addActionListener(this); b5.addActionListener(this); b6.addActionListener(this);
+        b7.addActionListener(this); b8.addActionListener(this); b9.addActionListener(this);
+        b0.addActionListener(this);
+        bAdd.addActionListener(this); bSub.addActionListener(this);
+        bMul.addActionListener(this); bDiv.addActionListener(this);
+        bEq.addActionListener(this); bClr.addActionListener(this);
+
+        setSize(320,350);
+        setLayout(null);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String s=e.getActionCommand();
+
+        if(s.equals("1")||s.equals("2")||s.equals("3")||s.equals("4")||
+           s.equals("5")||s.equals("6")||s.equals("7")||s.equals("8")||
+           s.equals("9")||s.equals("0")) {
+            t.setText(t.getText()+s);
+        }
+        else if(s.equals("+")||s.equals("-")||s.equals("*")||s.equals("/")) {
+            n1=Double.parseDouble(t.getText());
+            op=s;
+            t.setText("");
+        }
+        else if(s.equals("=")) {
+            n2=Double.parseDouble(t.getText());
+
+            if(op.equals("+")) t.setText(""+(n1+n2));
+            else if(op.equals("-")) t.setText(""+(n1-n2));
+            else if(op.equals("*")) t.setText(""+(n1*n2));
+            else if(op.equals("/")) t.setText(""+(n1/n2));
+        }
+        else if(s.equals("C")) {
+            t.setText("");
+        }
+    }
+
+    public static void main(String[] args) {
+        new Calculator();
+    }
+}
 ```
 
 Output:
