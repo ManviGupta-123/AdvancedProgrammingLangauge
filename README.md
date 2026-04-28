@@ -730,7 +730,209 @@ Output:
 
 ## Assignment-12
 ```
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
 
+public class RegistrationForm extends JFrame implements ActionListener {
+    JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    JButton b;
+
+    RegistrationForm() {
+        setLayout(null);
+
+        JLabel l1=new JLabel("Name");
+        JLabel l2=new JLabel("Email");
+        JLabel l3=new JLabel("Phone");
+        JLabel l4=new JLabel("Address");
+        JLabel l5=new JLabel("Username");
+        JLabel l6=new JLabel("Password");
+        JLabel l7=new JLabel("Gender");
+        JLabel l8=new JLabel("Course");
+        JLabel l9=new JLabel("City");
+        JLabel l10=new JLabel("Country");
+
+        l1.setBounds(30,20,100,25); t1.setBounds(140,20,150,25);
+        l2.setBounds(30,50,100,25); t2.setBounds(140,50,150,25);
+        l3.setBounds(30,80,100,25); t3.setBounds(140,80,150,25);
+        l4.setBounds(30,110,100,25); t4.setBounds(140,110,150,25);
+        l5.setBounds(30,140,100,25); t5.setBounds(140,140,150,25);
+        l6.setBounds(30,170,100,25); t6.setBounds(140,170,150,25);
+        l7.setBounds(30,200,100,25); t7.setBounds(140,200,150,25);
+        l8.setBounds(30,230,100,25); t8.setBounds(140,230,150,25);
+        l9.setBounds(30,260,100,25); t9.setBounds(140,260,150,25);
+        l10.setBounds(30,290,100,25); t10.setBounds(140,290,150,25);
+
+        b = new JButton("Submit");
+        b.setBounds(140,330,100,30);
+
+        add(l1); add(t1);
+        add(l2); add(t2);
+        add(l3); add(t3);
+        add(l4); add(t4);
+        add(l5); add(t5);
+        add(l6); add(t6);
+        add(l7); add(t7);
+        add(l8); add(t8);
+        add(l9); add(t9);
+        add(l10); add(t10);
+        add(b);
+
+        b.addActionListener(this);
+
+        setSize(350,420);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String s1=t1.getText();
+        String s2=t2.getText();
+        String s3=t3.getText();
+        String s4=t4.getText();
+        String s5=t5.getText();
+        String s6=t6.getText();
+        String s7=t7.getText();
+        String s8=t8.getText();
+        String s9=t9.getText();
+        String s10=t10.getText();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","root");
+
+            PreparedStatement ps = con.prepareStatement(
+                "insert into registration values(?,?,?,?,?,?,?,?,?,?)"
+            );
+
+            ps.setString(1,s1);
+            ps.setString(2,s2);
+            ps.setString(3,s3);
+            ps.setString(4,s4);
+            ps.setString(5,s5);
+            ps.setString(6,s6);
+            ps.setString(7,s7);
+            ps.setString(8,s8);
+            ps.setString(9,s9);
+            ps.setString(10,s10);
+
+            ps.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"Data Inserted Successfully");
+
+            con.close();
+        } catch(Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    public static void main(String[] args) {
+        new RegistrationForm();
+    }
+}
+
+
+
+
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
+
+public class RegistrationForm extends JFrame implements ActionListener {
+    JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    JButton b;
+
+    RegistrationForm() {
+        setLayout(null);
+
+        JLabel l1=new JLabel("Name");
+        JLabel l2=new JLabel("Email");
+        JLabel l3=new JLabel("Phone");
+        JLabel l4=new JLabel("Address");
+        JLabel l5=new JLabel("Username");
+        JLabel l6=new JLabel("Password");
+        JLabel l7=new JLabel("Gender");
+        JLabel l8=new JLabel("Course");
+        JLabel l9=new JLabel("City");
+        JLabel l10=new JLabel("Country");
+
+        l1.setBounds(30,20,100,25); t1.setBounds(140,20,150,25);
+        l2.setBounds(30,50,100,25); t2.setBounds(140,50,150,25);
+        l3.setBounds(30,80,100,25); t3.setBounds(140,80,150,25);
+        l4.setBounds(30,110,100,25); t4.setBounds(140,110,150,25);
+        l5.setBounds(30,140,100,25); t5.setBounds(140,140,150,25);
+        l6.setBounds(30,170,100,25); t6.setBounds(140,170,150,25);
+        l7.setBounds(30,200,100,25); t7.setBounds(140,200,150,25);
+        l8.setBounds(30,230,100,25); t8.setBounds(140,230,150,25);
+        l9.setBounds(30,260,100,25); t9.setBounds(140,260,150,25);
+        l10.setBounds(30,290,100,25); t10.setBounds(140,290,150,25);
+
+        b = new JButton("Submit");
+        b.setBounds(140,330,100,30);
+
+        add(l1); add(t1);
+        add(l2); add(t2);
+        add(l3); add(t3);
+        add(l4); add(t4);
+        add(l5); add(t5);
+        add(l6); add(t6);
+        add(l7); add(t7);
+        add(l8); add(t8);
+        add(l9); add(t9);
+        add(l10); add(t10);
+        add(b);
+
+        b.addActionListener(this);
+
+        setSize(350,420);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String s1=t1.getText();
+        String s2=t2.getText();
+        String s3=t3.getText();
+        String s4=t4.getText();
+        String s5=t5.getText();
+        String s6=t6.getText();
+        String s7=t7.getText();
+        String s8=t8.getText();
+        String s9=t9.getText();
+        String s10=t10.getText();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","root");
+
+            PreparedStatement ps = con.prepareStatement(
+                "insert into registration values(?,?,?,?,?,?,?,?,?,?)"
+            );
+
+            ps.setString(1,s1);
+            ps.setString(2,s2);
+            ps.setString(3,s3);
+            ps.setString(4,s4);
+            ps.setString(5,s5);
+            ps.setString(6,s6);
+            ps.setString(7,s7);
+            ps.setString(8,s8);
+            ps.setString(9,s9);
+            ps.setString(10,s10);
+
+            ps.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"Data Inserted Successfully");
+
+            con.close();
+        } catch(Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    public static void main(String[] args) {
+        new RegistrationForm();
+    }
+}
 ```
 
 Output:
