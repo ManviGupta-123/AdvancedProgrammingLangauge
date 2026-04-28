@@ -1190,7 +1190,27 @@ Output:
 
 ## Assignment-19
 ```
+public class ExceptionDemo {
+    public static void main(String[] args) {
 
+        int arr[] = {10, 20, 30, 40, 50};
+
+        try {
+            System.out.println("Accessing 6th element: " + arr[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Array index is out of bounds. Please check the index.");
+        }
+
+        try {
+            int a = 10;
+            int b = 0;
+            int c = a / b;
+            System.out.println(c);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed.");
+        }
+    }
+}
 ```
 
 Output:
