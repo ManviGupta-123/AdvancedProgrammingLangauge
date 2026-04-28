@@ -1260,7 +1260,31 @@ Output:
 
 ## Assignment-21
 ```
+import java.io.*;
 
+public class FileHandling {
+    public static void main(String[] args) {
+        try {
+            FileWriter fw = new FileWriter("data.txt");
+            fw.write("Hello, this is file handling in Java.\n");
+            fw.write("Second line of text.");
+            fw.close();
+
+            FileReader fr = new FileReader("data.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            br.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}
 ```
 
 Output:
