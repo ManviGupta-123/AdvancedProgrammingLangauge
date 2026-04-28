@@ -1134,7 +1134,54 @@ Output:
 
 ## Assignment-18
 ```
+package mypack;
 
+public class A {
+    public void show() {
+        System.out.println("Class A from mypack");
+    }
+}
+
+package mypack;
+
+public class B {
+    public void show() {
+        System.out.println("Class B from mypack");
+    }
+}
+
+package mypack.subpack;
+
+public class C {
+    public void show() {
+        System.out.println("Class C from subpack");
+    }
+}
+
+package mypack.subpack;
+
+public class D {
+    public void show() {
+        System.out.println("Class D from subpack");
+    }
+}
+
+import mypack.*;
+import mypack.subpack.*;
+
+public class MainClass {
+    public static void main(String[] args) {
+        A a = new A();
+        B b = new B();
+        C c = new C();
+        D d = new D();
+
+        a.show();
+        b.show();
+        c.show();
+        d.show();
+    }
+}
 ```
 
 Output:
