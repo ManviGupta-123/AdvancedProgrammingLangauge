@@ -725,6 +725,7 @@ public class AddSwing extends JFrame implements ActionListener {
 ```
 
 Output:
+<img width="356" height="359" alt="WhatsApp Image 2026-04-28 at 12 19 30 PM" src="https://github.com/user-attachments/assets/fd60bc74-1cc1-407e-9bef-7c6ae82b73aa" />
 
 
 
