@@ -891,7 +891,75 @@ Output:
 
 ## Assignment-15
 ```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
+class DrawPanel extends JPanel {
+    int shape = 0;
+
+    void setShape(int s) {
+        shape = s;
+        repaint();
+    }
+
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        if (shape == 1) g.drawOval(100, 50, 100, 100);
+        else if (shape == 2) g.drawOval(100, 50, 150, 80);
+        else if (shape == 3) g.drawRect(100, 50, 150, 100);
+        else if (shape == 4) g.drawRoundRect(100, 50, 150, 100, 30, 30);
+        else if (shape == 5) g.fillRect(100, 50, 150, 100);
+        else if (shape == 6) g.fillOval(100, 50, 100, 100);
+        else if (shape == 7) g.drawLine(50, 50, 200, 150);
+        else if (shape == 8) g.drawArc(100, 50, 150, 100, 0, 180);
+        else if (shape == 9) {
+            int x[] = {100,150,200};
+            int y[] = {150,50,150};
+            g.drawPolygon(x,y,3);
+        }
+        else if (shape == 10) g.fillArc(100, 50, 150, 100, 0, 180);
+    }
+}
+
+public class ShapeFrame extends JFrame implements ActionListener {
+    JButton b[] = new JButton[10];
+    DrawPanel p;
+
+    ShapeFrame() {
+        setLayout(null);
+
+        p = new DrawPanel();
+        p.setBounds(50, 50, 300, 200);
+        add(p);
+
+        String names[] = {"Circle","Oval","Rectangle","RoundRect","FillRect",
+                          "FillCircle","Line","Arc","Triangle","FillArc"};
+
+        for (int i = 0; i < 10; i++) {
+            b[i] = new JButton(names[i]);
+            b[i].setBounds(50 + (i%5)*100, 270 + (i/5)*50, 90, 30);
+            add(b[i]);
+            b[i].addActionListener(this);
+        }
+
+        setSize(600,400);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        for (int i = 0; i < 10; i++) {
+            if (e.getSource() == b[i]) {
+                p.setShape(i+1);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        new ShapeFrame();
+    }
+}
 ```
 
 Output:
